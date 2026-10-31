@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SplitKey · Shamir key custody for private AI agents</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">⬢</span> SplitKey</div>
+  <div class="tag">Shamir 3-of-5 key custody for private AI agents</div>
+</header>
+
+<section class="panel">
+  <h2>1 · Split the master key</h2>
+  <p class="hint">The key is split into 5 shares held by 5 separate vaults. No single vault ever holds the key.</p>
+  <div class="row">
+    <input id="key" type="password" placeholder="master key (e.g. an AI provider API key)">
+    <button id="btn-split" class="primary">Split into 5 vaults</button>
+    <button id="btn-demo">Demo key</button>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>2 · Vaults <span id="vstatus" class="muted"></span></h2>
+  <div id="vaults" class="grid"></div>
+  <div class="meter"><div id="meterfill"></div><span id="metertext">0 / 3 shares collected</span></div>
+</section>
+
+<section class="panel">
+  <h2>3 · Agent mode</h2>
+  <p class="hint">The agent reconstructs the key in memory only, encrypts your message locally, then wipes the key. Nothing leaves this machine except ciphertext.</p>
+  <div class="row">
+    <input id="msg" placeholder="message for the agent to encrypt">
+    <button id="btn-run" class="primary">Run agent task</button>
+    <button id="btn-zero">Zeroize key</button>
+  </div>
+  <div id="agent-out" class="outbox hidden"></div>
+</section>
+
+<div class="cols">
+  <section class="panel">
+    <h2>Audit log</h2>
+    <ul id="audit" class="log"></ul>
+  </section>
+  <section class="panel">
+    <h2>Proof of custody</h2>
+    <ul id="proof" class="log"></ul>
+  </section>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{
+  "threshold": 3,
+  "shares": 5,
+  "vaults": [
+    {
+      "id": 0,
+      "label": "Local Disk",
+      "x": 1,
+      "share_hex": "b6148039a6d3c9a77143fc662d84c8b8595e8c8658f1e1081a176a3763907bc44000be191d268f554375ae"
+    },
+    {
+      "id": 1,
+      "label": "USB Drive",
+      "x": 2,
+      "share_hex": "6189ca67fb1c81752b77dbcb7807d6ede92d8a35d3c924cac942016029b8bac6054a7c3d1417a8fda12213"
+    },
+    {
+      "id": 2,
+      "label": "Cloud Bucket",
+      "x": 3,
+      "share_hex": "a4f6673a38a227ff6e521fcc6ce02c30871137d7bd59f6a4fe11247a0467952f10198709407f0af8b018f9"
+    },
+    {
+      "id": 3,
+      "label": "Hardware Token",
+      "x": 4,
+      "share_hex": "79c244bc50cf68c464352682024dd3d49e200ddc05429ffeeaf2c34e74f16f7600a758f000e26db1caf1a8"
+    },
+    {
+      "id": 4,
+      "label": "Paper Backup",
+      "x": 5,
+      "share_hex": "bcbde9e19371ce4e2110e28516aa2909f01cb03e6bd24d90dda1e654592e409f15f4a3c4548acfb4dbcb42"
+    }
+  ],
+  "audit": [
+    {
+      "ts": "2026-10-31 05:11:55",
+      "event": "split",
+      "detail": "key split into 5 shares, threshold 3"
+    },
+    {
+      "ts": "2026-10-31 05:11:55",
+      "event": "share_collected",
+      "detail": "Local Disk (share #1)"
+    },
+    {
+      "ts": "2026-10-31 05:11:55",
+      "event": "share_collected",
+      "detail": "USB Drive (share #2)"
+    },
+    {
+      "ts": "2026-10-31 05:11:55",
+      "event": "share_collected",
+      "detail": "Cloud Bucket (share #3)"
+    },
+    {
+      "ts": "2026-10-31 05:11:55",
+      "event": "key_reconstructed",
+      "detail": "in memory only, from 3 shares"
+    },
+    {
+      "ts": "2026-10-31 05:11:55",
+      "event": "agent_task",
+      "detail": "message encrypted locally with in-memory key"
+    },
+    {
+      "ts": "2026-10-31 05:11:55",
+      "event": "key_zeroized",
+      "detail": "memory wiped, collected shares returned to vaults"
+    }
+  ],
+  "collected": [],
+  "key_active": false
+}

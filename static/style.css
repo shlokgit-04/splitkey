@@ -1,0 +1,28 @@
+:root{--bg:#0b0f14;--panel:#121822;--line:#1f2937;--text:#e5edf6;--muted:#7d8ea3;--acc:#4ade80;--acc2:#38bdf8}
+*{box-sizing:border-box}body{margin:0;font-family:ui-sans-serif,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+header{display:flex;align-items:baseline;gap:16px;padding:20px 28px;border-bottom:1px solid var(--line)}
+.brand{font-size:22px;font-weight:700}.logo{color:var(--acc)}.tag{color:var(--muted);font-size:13px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:16px 28px;padding:18px 22px}
+h2{margin:0 0 10px;font-size:16px}.muted{color:var(--muted);font-weight:400;font-size:13px}
+.hint{color:var(--muted);font-size:13px;margin:4px 0 12px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input{flex:1;min-width:220px;background:#0d131c;border:1px solid var(--line);border-radius:8px;color:var(--text);padding:10px 12px;font-size:14px}
+button{background:#1b2433;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:10px 16px;cursor:pointer;font-size:14px}
+button.primary{background:var(--acc);color:#06240f;border-color:var(--acc);font-weight:600}
+button:hover{filter:brightness(1.1)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.vault{background:#0d131c;border:1px solid var(--line);border-radius:10px;padding:12px}
+.vault h3{margin:0 0 6px;font-size:14px}
+.vault .share{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);word-break:break-all}
+.vault.collected{border-color:var(--acc)}
+.vault button{margin-top:8px;width:100%;font-size:12px;padding:7px}
+.meter{position:relative;height:26px;background:#0d131c;border:1px solid var(--line);border-radius:8px;margin-top:12px;overflow:hidden}
+#meterfill{position:absolute;inset:0;width:0%;background:linear-gradient(90deg,var(--acc2),var(--acc));transition:width .3s}
+#metertext{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px}
+.outbox{margin-top:12px;background:#0d131c;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-family:ui-monospace,monospace;font-size:12px;word-break:break-all}
+.hidden{display:none}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;align-items:start}
+@media(max-width:800px){.cols{grid-template-columns:1fr}}
+.log{list-style:none;margin:0;padding:0;font-size:12.5px}
+.log li{padding:6px 0;border-bottom:1px dashed var(--line);color:var(--text)}
+.log li span{color:var(--muted);margin-right:8px}
