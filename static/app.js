@@ -28,12 +28,11 @@ document.getElementById('btn-demo').onclick = async () => {
 };
 document.getElementById('btn-run').onclick = async () => {
   const out = document.getElementById('agent-out');
-  const need = !document.querySelector('.vault.collected');
   const r0 = await (await fetch('/api/state')).json();
   if (!r0.enough) {
     for (const v of r0.vaults) { if (r0.collected.length < r0.threshold) await fetch('/api/collect/' + v.id, {method:'POST'}); }
-    await fetch('/api/reconstruct', {method:'POST'});
   }
+  if (!r0.key_active) await fetch('/api/reconstruct', {method:'POST'});
   const r = await (await fetch('/api/agent/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({message: document.getElementById('msg').value})})).json();
   if (r.ok) { out.classList.remove('hidden'); out.textContent = 'ciphertext: ' + r.full; } else { out.classList.remove('hidden'); out.textContent = r.error; }
   refresh();
